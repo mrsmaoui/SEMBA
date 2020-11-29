@@ -1,4 +1,4 @@
-# SEMBA: Single-rEsidue Mutational based Binding Affinity
+SEMBA: Single-rEsidue Mutational based Binding Affinity
 
 (c) 2014 Mohamed R. Smaoui, Jerome Waldispuhl
 School of Computer Science, McGill University, 3630 University Street, Montreal, Canada
@@ -11,7 +11,7 @@ to determine the effect of a mutation on a protein's stability.
 
 SEMBA runs as command-line application.
 
-## INSTALLATION:
+INSTALLATION:
 
 SEMBA utilizes the output of several programs to compute stability. In particular, it requires
 the prior installation of GROMACS, SCWRL4.
@@ -28,21 +28,18 @@ Before you use SEMBA, you need to run python install.py to install the AquaSol p
 calculate Solvation energy and the PDB2PQR program. To do that execute the following 2 commands
 with the sudo command if needed
 
-```bash
 	$ sudo tar zxvf AquaSol_Complexes.tgz
 	$ sudo ./AquaSol_Complexes/Makefile
-```
+
 
 
 USAGE 1: Calculate the binding affinity of a single residue
 
-```bash
 	$ python SEMBA.py -f protein.pdb -p position -s sequence
 		-f protein.pdb: the PDB file you wish to use
 		-p position: the residue (amino acid) position you want to calculat the binding
 		   affinity for.
 		-s sequence: the complete amino acid sequence of the residues in the protein file
-```
 
 	This commands calculates the complete binding affinity of a single residue by computing
 	the residue's binding affinity with respect to all 20 amino acids. Each amino acid is 
@@ -52,7 +49,6 @@ USAGE 1: Calculate the binding affinity of a single residue
 
 USAGE 2: Calculate the binding affinity of a single residue with resect to a sing amino acid
 
-```bash
 	$ python SEMBA.py -f protein.pdb -p position -a aminoacid -s sequence
 		-f protein.pdb: the PDB file you wish to use
 		-p position: the residue (amino acid) position you want to calculat the binding
@@ -60,7 +56,6 @@ USAGE 2: Calculate the binding affinity of a single residue with resect to a sin
 		-a aminoacid: the amino acid letter (ex. K) you wish to calculate the binding
 		   affinity for with respect to the residue at position p.
 		-s sequence: the complete amino acid sequence of the residues in the protein file
-```
 
 	This commands calculates the binding affinity of a single residue with respect to the
 	chosen amino acid. The binding affinity is calculated by analyzing the energy of the
@@ -69,13 +64,11 @@ USAGE 2: Calculate the binding affinity of a single residue with resect to a sin
 
 USAGE 3: Calculate the complete binding affinity of a protein
 
-```bash
 	$ python SEMBA.py -f protein.pdb -p all -s sequence
 		-f protein.pdb: the PDB file you wish to use
 		-p position: the residue (amino acid) position you want to calculat the binding
                    affinity for.
 		-s sequence: the complete amino acid sequence of the residues in the protein file
-```
 
 	This commands executes 20*n runs where n is the number of residues in the protein. This 
 	call explores the binding affinity of all the residues in your chosen protein. This 
